@@ -2,7 +2,7 @@ import {Component} from 'react'
 import './index.css'
 
 class Stopwatch extends Component {
-  state = {minutes: 0, seconds: 0, clickTimes: 0}
+  state = {minutes: 0, seconds: 0, clickTimes: 1}
 
   startBtnClicked = () => {
     const {clickTimes} = this.state
@@ -25,11 +25,11 @@ class Stopwatch extends Component {
 
   stopBtnClicked = () => {
     clearInterval(this.myInterval)
-    this.setState({clickTimes: 0})
+    this.setState({clickTimes: 1})
   }
 
   resetBtnClicked = () => {
-    this.setState({minutes: 0, seconds: 0, clickTimes: 0})
+    this.setState({minutes: 0, seconds: 0, clickTimes: 1})
     clearInterval(this.myInterval)
   }
 
